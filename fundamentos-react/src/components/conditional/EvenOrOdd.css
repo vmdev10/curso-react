@@ -1,0 +1,21 @@
+.ValuesList header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.ValuesList header h3 {
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.ValuesList ul li {
+  display: flex;
+  justify-content: space-around;
+}

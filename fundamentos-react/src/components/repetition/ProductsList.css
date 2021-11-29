@@ -1,0 +1,16 @@
+table {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+table tr {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: #E5F9E0;
+}
+
+.Par {
+  background-color: #a3f7b5;
+}
