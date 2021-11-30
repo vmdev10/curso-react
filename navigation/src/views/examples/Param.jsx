@@ -6,7 +6,7 @@ const Home = (props) => {
   return (
     <div className="Home">
       <h1>Param</h1>
-      <h2>Valor: { id } </h2>
+      <h2>Valor do id: { id } </h2>
     </div>
   );
 };
