@@ -1,58 +1,10 @@
 import React, { useReducer } from "react";
+
 import PageTitle from "../../components/layout/PageTitle";
 
+import { initialState, reducer } from "../../store";
+import { add2, login } from "../../store/actions";
 const UseReducer = (props) => {
-  const initialState = {
-    cart: [],
-    products: [],
-    user: null,
-    // Foco...
-    number: 0,
-  };
-
-  // A partir da 'action'(ação) que foi gerada, eu sei como vou atualizar o meu estado(state) para o novo estado da aplicação
-  // Toda ação tem um tipo, que é onde saberei onde vou alterar o meu estado
-  function reducer(state, action) {
-    switch (action.type) {
-      case "add2":
-        return {
-          ...state,
-          number: state.number + 2,
-        };
-
-      case "multiply7":
-        return {
-          ...state,
-          number: state.number * 7,
-        };
-
-      case "divide25":
-        return {
-          ...state,
-          number: state.number / 25,
-        };
-
-      case "parseInt":
-        return {
-          ...state,
-          number: parseInt(state.number),
-        };
-      case "addN":
-        return {
-          ...state,
-          number: state.number + action.playload,
-        };
-
-      case "login":
-        return {
-          ...state,
-          user: { name: action.payload },
-        };
-      default:
-        return state;
-    }
-  }
-
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
@@ -70,7 +22,7 @@ const UseReducer = (props) => {
           <span className="text">Nenhum usuário logado</span>
         )}
         <div>
-          <button className="btn" onClick={() => dispatch({ type: "add2" })}>
+          <button className="btn" onClick={() => add2(dispatch)}>
             +2
           </button>
           <button
@@ -79,7 +31,10 @@ const UseReducer = (props) => {
           >
             x7
           </button>
-          <button className="btn" onClick={() => dispatch({ type: "divide25" })}>
+          <button
+            className="btn"
+            onClick={() => dispatch({ type: "divide25" })}
+          >
             /25
           </button>
           <button
@@ -88,13 +43,22 @@ const UseReducer = (props) => {
           >
             Int
           </button>
-          <button className="btn" onClick={() => dispatch({type: 'addN', playload: 10})}>+10</button>
-          <button className="btn" onClick={() => dispatch({type: 'addN', playload: 15})}>+15</button>
-
+          <button
+            className="btn"
+            onClick={() => dispatch({ type: "addN", playload: 10 })}
+          >
+            +10
+          </button>
+          <button
+            className="btn"
+            onClick={() => dispatch({ type: "addN", playload: 15 })}
+          >
+            +15
+          </button>
         </div>
         <button
           className="btn"
-          onClick={() => dispatch({ type: "login", payload: "Júlia" })}
+          onClick={() => login(dispatch, 'Júlia')}
         >
           Login
         </button>
