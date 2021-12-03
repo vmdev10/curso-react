@@ -4,6 +4,7 @@ import PageTitle from "../../components/layout/PageTitle";
 
 import { initialState, reducer } from "../../store";
 import { add2, login } from "../../store/actions";
+
 const UseReducer = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
