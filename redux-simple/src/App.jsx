@@ -2,7 +2,10 @@ import "./App.css";
 
 import Card from "./components/Card";
 import Interval from "./components/Interval";
-
+import Average from "./components/Average";
+import Sum from "./components/Sum";
+import PrizeDraw
+ from "./components/PrizeDraw";
 function App() {
   return (
     <div className="App">
@@ -11,12 +14,9 @@ function App() {
         <Interval />
       </div>
       <div className="linha">
-        <Card title="Card 2" blue="blue">
-          Y
-        </Card>
-        <Card title="Card 2" green="green">
-          Y
-        </Card>
+        <Average/>
+        <Sum />
+        <PrizeDraw />
       </div>
     </div>
   );

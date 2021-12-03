@@ -6,7 +6,7 @@ import Card from "./Card";
 
 const Interval = props => {
   return (
-    <Card title="Intervalo de números" red="red">
+    <Card title="Intervalo de números" red>
         <div className="Interval">
           <span>
             <strong>Mínimo:</strong>
