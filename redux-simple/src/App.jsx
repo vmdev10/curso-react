@@ -8,19 +8,16 @@ import PrizeDraw from "./components/PrizeDraw";
 import { useState } from "react";
 
 function App() {
-  const [min, setMin] = useState(0)
-  const [max, setMax] = useState(100)
-
   return (
     <div className="App">
       <h1>Exercício React-Redux (simples)</h1>
       <div className="linha">
-        <Interval min={min} max={max} updateMin={setMin} updateMax={setMax}/>
+        <Interval />
       </div>
       <div className="linha">
-        <Average min={min} max={max}/>
-        <Sum min={min} max={max}/>
-        <PrizeDraw min={min} max={max}/>
+        <Average />
+        <Sum />
+        <PrizeDraw />
       </div>
     </div>
   );

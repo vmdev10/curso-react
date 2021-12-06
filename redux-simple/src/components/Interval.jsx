@@ -1,26 +1,25 @@
-import './Interval.css'
+import "./Interval.css";
 
 import React from "react";
 
 import Card from "./Card";
 
-const Interval = props => {
-  const { min, max, updateMin, updateMax } = props
+const Interval = (props) => {
   return (
     <Card title="Intervalo de números" red>
-        <div className="Interval">
-          <span>
-            <strong>Mínimo:</strong>
-            <input type="number" value={min} onChange={(event) => updateMin(+event.target.value)} />
-          </span>
+      <div className="Interval">
+        <span>
+          <strong>Mínimo:</strong>
+          <input type="number" value={5} readOnly />
+        </span>
 
-          <span>
-            <strong>Máximo:</strong>
-            <input type="number" value={max} onChange={(event) => updateMax(+event.target.value)} />
-          </span>
-        </div>
-      </Card>
-  )
-}
+        <span>
+          <strong>Máximo:</strong>
+          <input type="number" value={10} readOnly />
+        </span>
+      </div>
+    </Card>
+  );
+};
 
-export default Interval
+export default Interval;
